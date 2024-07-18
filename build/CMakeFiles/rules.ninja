@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\MSYS\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Workspace\Toolbar -BC:\Workspace\Toolbar\build
+  command = C:\MSYS\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Workspace\SDL3_Toolbar -BC:\Workspace\SDL3_Toolbar\build
   description = Re-running CMake...
   generator = 1
 

@@ -187,8 +187,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "C:/Workspace/Toolbar/build",
-		"source" : "C:/Workspace/Toolbar"
+		"build" : "C:/Workspace/SDL3_Toolbar/build",
+		"source" : "C:/Workspace/SDL3_Toolbar"
 	},
 	"version" : 
 	{

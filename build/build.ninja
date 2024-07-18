@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = C$:/Workspace/Toolbar/build/
+cmake_ninja_workdir = C$:/Workspace/SDL3_Toolbar/build/
 # =============================================================================
 # Object build statements for EXECUTABLE target Toolbar
 
@@ -49,8 +49,26 @@ cmake_ninja_workdir = C$:/Workspace/Toolbar/build/
 
 build cmake_object_order_depends_target_Toolbar: phony || .
 
-build CMakeFiles/Toolbar.dir/toolbar_main.c.obj: C_COMPILER__Toolbar_unscanned_Debug C$:/Workspace/Toolbar/toolbar_main.c || cmake_object_order_depends_target_Toolbar
+build CMakeFiles/Toolbar.dir/toolbar_define.c.obj: C_COMPILER__Toolbar_unscanned_Debug C$:/Workspace/SDL3_Toolbar/toolbar_define.c || cmake_object_order_depends_target_Toolbar
+  DEP_FILE = CMakeFiles\Toolbar.dir\toolbar_define.c.obj.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles\Toolbar.dir
+  OBJECT_FILE_DIR = CMakeFiles\Toolbar.dir
+
+build CMakeFiles/Toolbar.dir/toolbar_main.c.obj: C_COMPILER__Toolbar_unscanned_Debug C$:/Workspace/SDL3_Toolbar/toolbar_main.c || cmake_object_order_depends_target_Toolbar
   DEP_FILE = CMakeFiles\Toolbar.dir\toolbar_main.c.obj.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles\Toolbar.dir
+  OBJECT_FILE_DIR = CMakeFiles\Toolbar.dir
+
+build CMakeFiles/Toolbar.dir/toolbar_component.c.obj: C_COMPILER__Toolbar_unscanned_Debug C$:/Workspace/SDL3_Toolbar/toolbar_component.c || cmake_object_order_depends_target_Toolbar
+  DEP_FILE = CMakeFiles\Toolbar.dir\toolbar_component.c.obj.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles\Toolbar.dir
+  OBJECT_FILE_DIR = CMakeFiles\Toolbar.dir
+
+build CMakeFiles/Toolbar.dir/toolbar_texture.c.obj: C_COMPILER__Toolbar_unscanned_Debug C$:/Workspace/SDL3_Toolbar/toolbar_texture.c || cmake_object_order_depends_target_Toolbar
+  DEP_FILE = CMakeFiles\Toolbar.dir\toolbar_texture.c.obj.d
   FLAGS = -g
   OBJECT_DIR = CMakeFiles\Toolbar.dir
   OBJECT_FILE_DIR = CMakeFiles\Toolbar.dir
@@ -63,7 +81,7 @@ build CMakeFiles/Toolbar.dir/toolbar_main.c.obj: C_COMPILER__Toolbar_unscanned_D
 #############################################
 # Link the executable Toolbar.exe
 
-build Toolbar.exe: C_EXECUTABLE_LINKER__Toolbar_Debug CMakeFiles/Toolbar.dir/toolbar_main.c.obj
+build Toolbar.exe: C_EXECUTABLE_LINKER__Toolbar_Debug CMakeFiles/Toolbar.dir/toolbar_define.c.obj CMakeFiles/Toolbar.dir/toolbar_main.c.obj CMakeFiles/Toolbar.dir/toolbar_component.c.obj CMakeFiles/Toolbar.dir/toolbar_texture.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lSDL3  -lSDL3_image  -lSDL3  -lSDL3_image  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Toolbar.dir
@@ -78,7 +96,7 @@ build Toolbar.exe: C_EXECUTABLE_LINKER__Toolbar_Debug CMakeFiles/Toolbar.dir/too
 # Utility command for package
 
 build CMakeFiles/package.util: CUSTOM_COMMAND all
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Workspace\Toolbar\build && C:\MSYS\mingw64\bin\cpack.exe --config ./CPackConfig.cmake"
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Workspace\SDL3_Toolbar\build && C:\MSYS\mingw64\bin\cpack.exe --config ./CPackConfig.cmake"
   DESC = Run CPack packaging tool...
   pool = console
   restat = 1
@@ -90,7 +108,7 @@ build package: phony CMakeFiles/package.util
 # Utility command for package_source
 
 build CMakeFiles/package_source.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Workspace\Toolbar\build && C:\MSYS\mingw64\bin\cpack.exe --config ./CPackSourceConfig.cmake C:/Workspace/Toolbar/build/CPackSourceConfig.cmake"
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Workspace\SDL3_Toolbar\build && C:\MSYS\mingw64\bin\cpack.exe --config ./CPackSourceConfig.cmake C:/Workspace/SDL3_Toolbar/build/CPackSourceConfig.cmake"
   DESC = Run CPack packaging tool for source...
   pool = console
   restat = 1
@@ -102,7 +120,7 @@ build package_source: phony CMakeFiles/package_source.util
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Workspace\Toolbar\build && C:\MSYS\mingw64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Workspace\SDL3_Toolbar\build && C:\MSYS\mingw64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -113,7 +131,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Workspace\Toolbar\build && C:\MSYS\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Workspace\Toolbar -BC:\Workspace\Toolbar\build"
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Workspace\SDL3_Toolbar\build && C:\MSYS\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Workspace\SDL3_Toolbar -BC:\Workspace\SDL3_Toolbar\build"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -131,7 +149,7 @@ build Toolbar: phony Toolbar.exe
 # =============================================================================
 
 #############################################
-# Folder: C:/Workspace/Toolbar/build
+# Folder: C:/Workspace/SDL3_Toolbar/build
 
 build all: phony Toolbar.exe
 
@@ -142,14 +160,14 @@ build all: phony Toolbar.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:/MSYS/mingw64/share/cmake/Modules/CMakeCInformation.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeRCInformation.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/MSYS/mingw64/share/cmake/Modules/CPack.cmake C$:/MSYS/mingw64/share/cmake/Modules/CPackComponent.cmake C$:/MSYS/mingw64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/MSYS/mingw64/share/cmake/Modules/Compiler/GNU-C.cmake C$:/MSYS/mingw64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/MSYS/mingw64/share/cmake/Modules/Compiler/GNU.cmake C$:/MSYS/mingw64/share/cmake/Modules/FindPackageHandleStandardArgs.cmake C$:/MSYS/mingw64/share/cmake/Modules/FindPackageMessage.cmake C$:/MSYS/mingw64/share/cmake/Modules/FindPkgConfig.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-GNU-C.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/WindowsPaths.cmake C$:/MSYS/mingw64/share/cmake/Templates/CPackConfig.cmake.in C$:/Workspace/Toolbar/CMakeLists.txt CMakeCache.txt CMakeFiles/3.29.6/CMakeCCompiler.cmake CMakeFiles/3.29.6/CMakeCXXCompiler.cmake CMakeFiles/3.29.6/CMakeRCCompiler.cmake CMakeFiles/3.29.6/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | C$:/MSYS/mingw64/share/cmake/Modules/CMakeCInformation.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeRCInformation.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/MSYS/mingw64/share/cmake/Modules/CPack.cmake C$:/MSYS/mingw64/share/cmake/Modules/CPackComponent.cmake C$:/MSYS/mingw64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/MSYS/mingw64/share/cmake/Modules/Compiler/GNU-C.cmake C$:/MSYS/mingw64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/MSYS/mingw64/share/cmake/Modules/Compiler/GNU.cmake C$:/MSYS/mingw64/share/cmake/Modules/FindPackageHandleStandardArgs.cmake C$:/MSYS/mingw64/share/cmake/Modules/FindPackageMessage.cmake C$:/MSYS/mingw64/share/cmake/Modules/FindPkgConfig.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-GNU-C.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/WindowsPaths.cmake C$:/MSYS/mingw64/share/cmake/Templates/CPackConfig.cmake.in C$:/Workspace/SDL3_Toolbar/CMakeLists.txt CMakeCache.txt CMakeFiles/3.29.6/CMakeCCompiler.cmake CMakeFiles/3.29.6/CMakeCXXCompiler.cmake CMakeFiles/3.29.6/CMakeRCCompiler.cmake CMakeFiles/3.29.6/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/MSYS/mingw64/share/cmake/Modules/CMakeCInformation.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeRCInformation.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/MSYS/mingw64/share/cmake/Modules/CPack.cmake C$:/MSYS/mingw64/share/cmake/Modules/CPackComponent.cmake C$:/MSYS/mingw64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/MSYS/mingw64/share/cmake/Modules/Compiler/GNU-C.cmake C$:/MSYS/mingw64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/MSYS/mingw64/share/cmake/Modules/Compiler/GNU.cmake C$:/MSYS/mingw64/share/cmake/Modules/FindPackageHandleStandardArgs.cmake C$:/MSYS/mingw64/share/cmake/Modules/FindPackageMessage.cmake C$:/MSYS/mingw64/share/cmake/Modules/FindPkgConfig.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-GNU-C.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/WindowsPaths.cmake C$:/MSYS/mingw64/share/cmake/Templates/CPackConfig.cmake.in C$:/Workspace/Toolbar/CMakeLists.txt CMakeCache.txt CMakeFiles/3.29.6/CMakeCCompiler.cmake CMakeFiles/3.29.6/CMakeCXXCompiler.cmake CMakeFiles/3.29.6/CMakeRCCompiler.cmake CMakeFiles/3.29.6/CMakeSystem.cmake: phony
+build C$:/MSYS/mingw64/share/cmake/Modules/CMakeCInformation.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeRCInformation.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/MSYS/mingw64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/MSYS/mingw64/share/cmake/Modules/CPack.cmake C$:/MSYS/mingw64/share/cmake/Modules/CPackComponent.cmake C$:/MSYS/mingw64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/MSYS/mingw64/share/cmake/Modules/Compiler/GNU-C.cmake C$:/MSYS/mingw64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/MSYS/mingw64/share/cmake/Modules/Compiler/GNU.cmake C$:/MSYS/mingw64/share/cmake/Modules/FindPackageHandleStandardArgs.cmake C$:/MSYS/mingw64/share/cmake/Modules/FindPackageMessage.cmake C$:/MSYS/mingw64/share/cmake/Modules/FindPkgConfig.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-GNU-C.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/Windows.cmake C$:/MSYS/mingw64/share/cmake/Modules/Platform/WindowsPaths.cmake C$:/MSYS/mingw64/share/cmake/Templates/CPackConfig.cmake.in C$:/Workspace/SDL3_Toolbar/CMakeLists.txt CMakeCache.txt CMakeFiles/3.29.6/CMakeCCompiler.cmake CMakeFiles/3.29.6/CMakeCXXCompiler.cmake CMakeFiles/3.29.6/CMakeRCCompiler.cmake CMakeFiles/3.29.6/CMakeSystem.cmake: phony
 
 
 #############################################

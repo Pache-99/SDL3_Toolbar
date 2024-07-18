@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Workspace/Toolbar/build"
+			"value" : "c:/Workspace/SDL3_Toolbar/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -559,7 +559,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Workspace/Toolbar/build/CMakeFiles/pkgRedirects"
+			"value" : "C:/Workspace/SDL3_Toolbar/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -631,7 +631,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Workspace/Toolbar"
+			"value" : "C:/Workspace/SDL3_Toolbar"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -2355,7 +2355,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Workspace/Toolbar/build"
+			"value" : "C:/Workspace/SDL3_Toolbar/build"
 		},
 		{
 			"name" : "Toolbar_IS_TOP_LEVEL",
@@ -2379,7 +2379,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Workspace/Toolbar"
+			"value" : "C:/Workspace/SDL3_Toolbar"
 		},
 		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",

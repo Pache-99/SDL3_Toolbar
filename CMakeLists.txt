@@ -6,7 +6,10 @@ pkg_check_modules(SDL3 REQUIRED sdl3)
 pkg_check_modules(SDL3_IMAGE REQUIRED SDL3_image)
 
 set(SOURCES
+    toolbar_define.c
     toolbar_main.c
+    toolbar_component.c
+    toolbar_texture.c
 )
 
 add_executable(Toolbar ${SOURCES})

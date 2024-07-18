@@ -1,4 +1,4 @@
-# Install script for directory: C:/Workspace/Toolbar
+# Install script for directory: C:/Workspace/SDL3_Toolbar
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Workspace/Toolbar/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Workspace/SDL3_Toolbar/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
