@@ -41,7 +41,7 @@ void setToolbar(SDL_Window *window, SDL_Renderer *renderer, SDL_Texture *texture
     SDL_GetWindowSize(window, &windowWidth, &windowHeight);
 
     background = (SDL_FRect){0, 0, windowWidth, windowHeight};
-    // *(toolbar -> background) = background;
+    // *(toolbar -> background) = background; // problem 
     SDL_RenderTexture(renderer, texture, NULL, &background);
 
     // Buttons
@@ -108,6 +108,24 @@ void setToolbar(SDL_Window *window, SDL_Renderer *renderer, SDL_Texture *texture
             SDL_RenderTexture(renderer, loadVerticalTexture(renderer, i), NULL, &verticalArr[i]);
         }
     }
+}
+
+void clickButton_Down(int mouse_X, int mouse_Y){
+
+
+}
+
+void clickButton_UP(int mouse_X, int mouse_Y){
+    // 마우스 좌표를 전달받음. 
+    // 전달받은 마우스 좌표로 무엇을 클릭했는지 확인함. 
+
+
+}
+
+void hoverButton(int mouse_X, int mouse_Y){
+
+
+
 }
 
 

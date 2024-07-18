@@ -14,7 +14,6 @@ void runToolbar(){
     Toolbar *toolbar = (Toolbar*)malloc(sizeof(Toolbar));
     setToolbar(window, renderer, texture, toolbar, false); // Temp: false
 
-    SDL_RenderTexture(renderer, texture, NULL, toolbar->background);
     SDL_RenderPresent(renderer);
 
     // float a, b;
@@ -24,6 +23,8 @@ void runToolbar(){
 void runWindow(){
 
     bool quit = false;
+
+    float mouse_X, mouse_Y;
 
     while (!quit){
 
@@ -38,6 +39,8 @@ void runWindow(){
             quit = true;
         }
 
+        SDL_GetMouseState(&mouse_X, &mouse_Y);
+
         // Mouse event
         switch(e.type){
 
@@ -46,12 +49,11 @@ void runWindow(){
                 break;
 
             case SDL_EVENT_MOUSE_BUTTON_UP:
-                // TODO: 어떤 버튼을 누른 상태에서 => 해당 rect를 나가지 않고 마우스를 땠는지 체크
-                // TODO: 위 조건을 만족 시 기능 실행
+                clickButton_Up(mouse_X, mouse_Y);
                 break;
 
             case SDL_EVENT_MOUSE_MOTION:
-                
+                // TODO: Hover 이미지 전환 
 
                 break;
         }
