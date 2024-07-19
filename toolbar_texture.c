@@ -24,7 +24,7 @@ SDL_Texture* loadButtonTexture(SDL_Renderer *renderer, ButtonProperty button, Bu
         case MINI:
             frontChar = IMAGE_PATH_MAIN_MINI;
             break;
-        case MAX:
+        case FULLSCREEN:
             frontChar = IMAGE_PATH_MAIN_MAX;
             break;
         case EXIT:

@@ -17,13 +17,19 @@
 
 #define STAT_MAIN_BUTTON 3
 
+// Exit flag
+typedef enum exitFlag{
+    ON, 
+    OFF
+}exitFlag;
+
 // Main buttons
 typedef enum ButtonProperty{
     PIN,
     LOGIN,
     MULTI,
     MINI,
-    MAX,
+    FULLSCREEN,
     EXIT
 } ButtonProperty;
 

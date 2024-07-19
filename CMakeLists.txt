@@ -10,6 +10,7 @@ set(SOURCES
     toolbar_main.c
     toolbar_component.c
     toolbar_texture.c
+    toolbar_function.c
 )
 
 add_executable(Toolbar ${SOURCES})

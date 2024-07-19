@@ -22,5 +22,11 @@
   "command": "C:\\MSYS\\mingw64\\bin\\cc.exe -g -o CMakeFiles\\Toolbar.dir\\toolbar_texture.c.obj -c C:\\Workspace\\SDL3_Toolbar\\toolbar_texture.c",
   "file": "C:\\Workspace\\SDL3_Toolbar\\toolbar_texture.c",
   "output": "CMakeFiles\\Toolbar.dir\\toolbar_texture.c.obj"
+},
+{
+  "directory": "C:/Workspace/SDL3_Toolbar/build",
+  "command": "C:\\MSYS\\mingw64\\bin\\cc.exe -g -o CMakeFiles\\Toolbar.dir\\toolbar_function.c.obj -c C:\\Workspace\\SDL3_Toolbar\\toolbar_function.c",
+  "file": "C:\\Workspace\\SDL3_Toolbar\\toolbar_function.c",
+  "output": "CMakeFiles\\Toolbar.dir\\toolbar_function.c.obj"
 }
 ]

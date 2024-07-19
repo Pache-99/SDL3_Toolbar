@@ -14,7 +14,8 @@ SDL_Window* makeWindow();
 SDL_Renderer* makeRenderer(SDL_Window *window);
 SDL_Texture* repaintTexture(SDL_Renderer *renderer);
 
-void settingToolbar(SDL_Window* window, SDL_Renderer* renderer, Toolbar *toolbar, bool flip);
+void settingToolbar(SDL_Window* window, SDL_Renderer* renderer, Toolbar *toolbar, bool button);
+int drawWindow(SDL_Renderer *renderer, Toolbar *toolbar, bool side, bool button);
 
 void clickButton(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar, SDL_FPoint mousePos, bool down);
 void hoverButton(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar, SDL_FPoint mousePos);

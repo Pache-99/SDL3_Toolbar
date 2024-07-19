@@ -73,6 +73,12 @@ build CMakeFiles/Toolbar.dir/toolbar_texture.c.obj: C_COMPILER__Toolbar_unscanne
   OBJECT_DIR = CMakeFiles\Toolbar.dir
   OBJECT_FILE_DIR = CMakeFiles\Toolbar.dir
 
+build CMakeFiles/Toolbar.dir/toolbar_function.c.obj: C_COMPILER__Toolbar_unscanned_Debug C$:/Workspace/SDL3_Toolbar/toolbar_function.c || cmake_object_order_depends_target_Toolbar
+  DEP_FILE = CMakeFiles\Toolbar.dir\toolbar_function.c.obj.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles\Toolbar.dir
+  OBJECT_FILE_DIR = CMakeFiles\Toolbar.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Toolbar
@@ -81,7 +87,7 @@ build CMakeFiles/Toolbar.dir/toolbar_texture.c.obj: C_COMPILER__Toolbar_unscanne
 #############################################
 # Link the executable Toolbar.exe
 
-build Toolbar.exe: C_EXECUTABLE_LINKER__Toolbar_Debug CMakeFiles/Toolbar.dir/toolbar_define.c.obj CMakeFiles/Toolbar.dir/toolbar_main.c.obj CMakeFiles/Toolbar.dir/toolbar_component.c.obj CMakeFiles/Toolbar.dir/toolbar_texture.c.obj
+build Toolbar.exe: C_EXECUTABLE_LINKER__Toolbar_Debug CMakeFiles/Toolbar.dir/toolbar_define.c.obj CMakeFiles/Toolbar.dir/toolbar_main.c.obj CMakeFiles/Toolbar.dir/toolbar_component.c.obj CMakeFiles/Toolbar.dir/toolbar_texture.c.obj CMakeFiles/Toolbar.dir/toolbar_function.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lSDL3  -lSDL3_image  -lSDL3  -lSDL3_image  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Toolbar.dir

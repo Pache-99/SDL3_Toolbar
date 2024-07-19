@@ -12,8 +12,8 @@ void runToolbar(){
     
     Toolbar *toolbar = (Toolbar*)malloc(sizeof(Toolbar));
 
-    bool flip = false;
-    settingToolbar(window, renderer, toolbar, flip);
+    bool button = true;
+    settingToolbar(window, renderer, toolbar, button);
 
     SDL_RenderPresent(renderer);
 
@@ -31,13 +31,15 @@ void runToolbar(){
         // Quit event
         if (e.type == SDL_EVENT_QUIT){
             quit = true;
+            break;
         }
         else if (e.type == SDL_EVENT_KEY_DOWN && e.key.scancode == SDL_SCANCODE_ESCAPE){
             quit = true;
+            break;
         }
         
         else if (e.type == SDL_EVENT_WINDOW_RESIZED){
-            settingToolbar(window, renderer, toolbar, flip);
+            settingToolbar(window, renderer, toolbar, button);
             SDL_RenderPresent(renderer);
         }
 
@@ -49,20 +51,23 @@ void runToolbar(){
 
             case SDL_EVENT_MOUSE_BUTTON_DOWN:
                 clickButton(window, renderer, toolbar, mousePos, true);
-                SDL_RenderPresent(renderer);
                 break;
 
             case SDL_EVENT_MOUSE_BUTTON_UP:
                 clickButton(window, renderer, toolbar, mousePos, false);
-                SDL_RenderPresent(renderer);
                 break;
 
             case SDL_EVENT_MOUSE_MOTION:
                 hoverButton(window, renderer, toolbar, mousePos);
-                // SDL_RenderPresent(renderer);
                 break;
         }
     }
+
+    free(toolbar);
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);
+
+    SDL_Quit();
 }
 
 int main(int argc, char* argv[]){
