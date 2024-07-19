@@ -4,31 +4,28 @@ void runToolbar(){
 
     SDL_Window *window = makeWindow();
     SDL_Renderer *renderer = makeRenderer(window);
-    SDL_Texture *texture = loadBackTexture(renderer);
 
     // int width, height;
     // SDL_GetCurrentRenderOutputSize(renderer, &width, &height);
     // SDL_SetWindowSize(window, width, height);
     // SDL_SetWindowFullscreen(window, true);
-
+    
     Toolbar *toolbar = (Toolbar*)malloc(sizeof(Toolbar));
-    setToolbar(window, renderer, texture, toolbar, false); // Temp: false
+
+    bool flip = false;
+    settingToolbar(window, renderer, toolbar, flip);
 
     SDL_RenderPresent(renderer);
-
-    // float a, b;
-    // SDL_GetTextureSize(texture, &a, &b);
-}
-
-void runWindow(){
 
     bool quit = false;
 
     float mouse_X, mouse_Y;
+    SDL_FPoint mousePos;
+
+    SDL_Event e;
 
     while (!quit){
 
-        SDL_Event e;
         SDL_WaitEvent(&e);
 
         // Quit event
@@ -38,28 +35,35 @@ void runWindow(){
         else if (e.type == SDL_EVENT_KEY_DOWN && e.key.scancode == SDL_SCANCODE_ESCAPE){
             quit = true;
         }
+        
+        else if (e.type == SDL_EVENT_WINDOW_RESIZED){
+            settingToolbar(window, renderer, toolbar, flip);
+            SDL_RenderPresent(renderer);
+        }
 
         SDL_GetMouseState(&mouse_X, &mouse_Y);
+        mousePos = (SDL_FPoint){mouse_X, mouse_Y};
 
         // Mouse event
         switch(e.type){
 
             case SDL_EVENT_MOUSE_BUTTON_DOWN:
-                // TODO: 어떤 버튼 클릭인지 체크  
+                clickButton(window, renderer, toolbar, mousePos, true);
+                SDL_RenderPresent(renderer);
                 break;
 
             case SDL_EVENT_MOUSE_BUTTON_UP:
-                clickButton_Up(mouse_X, mouse_Y);
+                clickButton(window, renderer, toolbar, mousePos, false);
+                SDL_RenderPresent(renderer);
                 break;
 
             case SDL_EVENT_MOUSE_MOTION:
-                // TODO: Hover 이미지 전환 
-
+                hoverButton(window, renderer, toolbar, mousePos);
+                // SDL_RenderPresent(renderer);
                 break;
         }
     }
 }
-
 
 int main(int argc, char* argv[]){
 
@@ -74,7 +78,5 @@ int main(int argc, char* argv[]){
     }
 
     runToolbar();
-    runWindow();
-    
     return 0;
 }

@@ -28,25 +28,37 @@ SDL_Texture* repaintTexture(SDL_Renderer *renderer){
 }
 
 // 현재 윈도우 사이즈에 맞게 화면 구성요소를 자동 갱신 & 출력
-void setToolbar(SDL_Window *window, SDL_Renderer *renderer, SDL_Texture *texture, Toolbar *toolbar, bool flip) {
+void settingToolbar(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar, bool flip) {
 
-    //  Temp toolbar components
-    SDL_FRect background;
-    SDL_FRect buttonArr[NUM_MAIN_BUTTON];
-    SDL_FRect sideArr[NUM_SIDE_BUTTON];
-    SDL_FRect verticalArr[NUM_VERTICAL_BUTTON];
+    // Initialize tolbar components
+    toolbar->background = (SDL_FRect*)malloc(sizeof(SDL_FRect));
+
+    for (int i = 0; i < NUM_MAIN_BUTTON; i++){
+        toolbar->buttonArr[i] = (SDL_FRect*)malloc(sizeof(SDL_FRect));
+    }
+
+    for (int i = 0; i < NUM_SIDE_BUTTON; i++){
+        toolbar->sideArr[i] = (SDL_FRect*)malloc(sizeof(SDL_FRect));
+    }
+
+    for (int i = 0; i < NUM_VERTICAL_BUTTON; i++){
+        toolbar->verticalArr[i] = (SDL_FRect*)malloc(sizeof(SDL_FRect));
+    }
+    
+    // TOD: window resize => 해상도 비례를 지키면서 줄일 수 있는 방법이 있나?
+    // TODO: 현재는 window, button 간 ratio를 계산하지 않으므로 수정 필요. 
 
     // Window and background
     int windowWidth, windowHeight;
     SDL_GetWindowSize(window, &windowWidth, &windowHeight);
 
-    background = (SDL_FRect){0, 0, windowWidth, windowHeight};
-    // *(toolbar -> background) = background; // problem 
-    SDL_RenderTexture(renderer, texture, NULL, &background);
+    *(toolbar -> background) = (SDL_FRect){0, 0, windowWidth, windowHeight}; 
+    SDL_RenderTexture(renderer, loadBackTexture(renderer), NULL, toolbar->background);
 
     // Buttons
     float buttonWidth, buttonHeight;
     SDL_GetTextureSize(loadButtonTexture(renderer, PIN, NORMAL), &buttonWidth, &buttonHeight);
+        // TODO: window와의 비례 추가 
 
         // Buttons tray
     float trayWidth = buttonWidth * NUM_MAIN_BUTTON;
@@ -58,10 +70,10 @@ void setToolbar(SDL_Window *window, SDL_Renderer *renderer, SDL_Texture *texture
 
     for (int i = 0; i < NUM_MAIN_BUTTON; i++){
         button_X = tray_X + (i * buttonWidth);
-        buttonArr[i] = (SDL_FRect){button_X, tray_Y, buttonWidth, buttonHeight};
+        *(toolbar->buttonArr[i]) = (SDL_FRect){button_X, tray_Y, buttonWidth, buttonHeight};
 
         if (!flip){
-        SDL_RenderTexture(renderer, loadButtonTexture(renderer, i, NORMAL), NULL, &buttonArr[i]);
+        SDL_RenderTexture(renderer, loadButtonTexture(renderer, i, NORMAL), NULL, toolbar->buttonArr[i]);
         }
     }
 
@@ -74,16 +86,13 @@ void setToolbar(SDL_Window *window, SDL_Renderer *renderer, SDL_Texture *texture
     float right_X = tray_X + trayWidth;
     float right_Y = 0;
 
-    sideArr[LEFT] = (SDL_FRect){left_X, left_Y, sideWidth, sideHeight};
-    sideArr[RIGHT] = (SDL_FRect){right_X, right_Y, sideWidth, sideHeight};
-
-    // *(toolbar->sideArr[LEFT]) = sideArr[LEFT];
-    // *(toolbar->sideArr[RIGHT]) = sideArr[RIGHT];
+    *(toolbar->sideArr[LEFT]) = (SDL_FRect){left_X, left_Y, sideWidth, sideHeight};
+    *(toolbar->sideArr[RIGHT]) = (SDL_FRect){right_X, right_Y, sideWidth, sideHeight};
 
     for (int i = 0; i < NUM_SIDE_BUTTON; i++){
 
         if (!flip){
-            SDL_RenderTexture(renderer, loadSideTexture(renderer, i), NULL, &sideArr[i]);
+            SDL_RenderTexture(renderer, loadSideTexture(renderer, i), NULL, toolbar->sideArr[i]);
         }
     }
 
@@ -96,45 +105,77 @@ void setToolbar(SDL_Window *window, SDL_Renderer *renderer, SDL_Texture *texture
     float spread_X = flip_X;
     float spread_Y = 0;
 
-    verticalArr[FLIP] = (SDL_FRect){flip_X, flip_Y, verticalWidth, verticalHeight};
-    verticalArr[SPREAD] = (SDL_FRect){spread_X, spread_Y, verticalWidth, verticalHeight};
-
-    // *(toolbar->verticalArr[FLIP]) = verticalArr[FLIP];
-    // *(toolbar->verticalArr[SPREAD]) = verticalArr[SPREAD];
+    *(toolbar->verticalArr[FLIP]) = (SDL_FRect){flip_X, flip_Y, verticalWidth, verticalHeight};
+    *(toolbar->verticalArr[SPREAD]) = (SDL_FRect){spread_X, spread_Y, verticalWidth, verticalHeight};
 
     for (int i = 0; i < NUM_VERTICAL_BUTTON; i++){
 
         if (!flip && i == FLIP){
-            SDL_RenderTexture(renderer, loadVerticalTexture(renderer, i), NULL, &verticalArr[i]);
+            SDL_RenderTexture(renderer, loadVerticalTexture(renderer, i), NULL, toolbar->verticalArr[i]);
         }
     }
 }
 
-void clickButton_Down(int mouse_X, int mouse_Y){
+void clickButton(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar, SDL_FPoint mousePos, bool down){
 
+    bool flip = false;
 
+    for (int i = 0; i < NUM_MAIN_BUTTON; i++){
+
+        if (SDL_PointInRectFloat(&mousePos, toolbar->buttonArr[i])){
+
+            settingToolbar(window, renderer, toolbar, flip);
+
+            switch(down){
+                case true:
+                    SDL_RenderTexture(renderer, loadButtonTexture(renderer, i, CLICK), NULL, toolbar->buttonArr[i]);
+                    break;
+
+                case false:
+                    SDL_RenderTexture(renderer, loadButtonTexture(renderer, i, HOVER), NULL, toolbar->buttonArr[i]);
+                    break;
+            }
+        }
+    }
+
+    for (int i = 0; i < NUM_SIDE_BUTTON; i++){
+
+        if (SDL_PointInRectFloat(&mousePos, toolbar->sideArr[i])){
+
+            settingToolbar(window, renderer, toolbar, flip);
+            SDL_RenderTexture(renderer, loadSideTexture(renderer, i), NULL, toolbar->sideArr[i]);
+        }
+    }
+
+    for (int i = 0; i < NUM_VERTICAL_BUTTON; i++){
+
+         if (SDL_PointInRectFloat(&mousePos, toolbar->verticalArr[i])){
+
+            settingToolbar(window, renderer, toolbar, flip);
+            SDL_RenderTexture(renderer, loadVerticalTexture(renderer, i), NULL, toolbar->verticalArr[i]);
+        }
+    }
 }
 
-void clickButton_UP(int mouse_X, int mouse_Y){
-    // 마우스 좌표를 전달받음. 
-    // 전달받은 마우스 좌표로 무엇을 클릭했는지 확인함. 
+void hoverButton(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar, SDL_FPoint mousePos){
 
+    // Problem
+    bool flip = false;
 
-}
+    for (int i = 0; i < NUM_MAIN_BUTTON; i++){
+        
+        settingToolbar(window, renderer, toolbar, flip);
 
-void hoverButton(int mouse_X, int mouse_Y){
+        if (SDL_PointInRectFloat(&mousePos, toolbar->buttonArr[i])){
 
-
-
-}
-
-
-void resizeWindow() {
-
-}
-
-
-void reprintWindow() {
-
+            settingToolbar(window, renderer, toolbar, flip);
+            SDL_RenderTexture(renderer, loadButtonTexture(renderer, i, HOVER), NULL, toolbar->buttonArr[i]);
+        }
+        else {
+            
+            settingToolbar(window, renderer, toolbar, flip);
+            SDL_RenderTexture(renderer, loadButtonTexture(renderer, i, NORMAL), NULL, toolbar->buttonArr[i]);
+        }
+    }
 }
 
