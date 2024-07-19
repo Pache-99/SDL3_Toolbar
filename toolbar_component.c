@@ -129,8 +129,9 @@ int drawWindow(SDL_Renderer *renderer, Toolbar *toolbar, bool side, bool button)
 }
 
 // Summary: 메인 버튼 down & up
-void clickButton(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar, SDL_FPoint mousePos, bool down){
+int clickButton(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar, SDL_FPoint mousePos, bool down){
 
+    // TODO: Hover 이미지가 여러번 출력되는거 같음. 조금 진하게 보임 
     drawWindow(renderer, toolbar, true, true);
 
     for (int i = 0; i < NUM_MAIN_BUTTON; i++){
@@ -143,12 +144,20 @@ void clickButton(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar, S
 
                 case false:
                     SDL_RenderTexture(renderer, loadButtonTexture(renderer, i, HOVER), NULL, toolbar->buttonArr[i]);
+
+                    if (i == EXIT){
+                        return EXIT;
+                    }
+
+                    classifyButton(i);
                     break;
             }
 
-            SDL_RenderPresent(renderer);          
+            SDL_RenderPresent(renderer);  
         }
     }
+
+    return 0;
 }
 
 // Summary: 버튼 호버링

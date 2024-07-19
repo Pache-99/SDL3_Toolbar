@@ -2,6 +2,7 @@
 #define TOOLBAR_COMPONENT_H
 
 #include "toolbar_texture.h"
+#include "toolbar_function.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -17,7 +18,7 @@ SDL_Texture* repaintTexture(SDL_Renderer *renderer);
 void settingToolbar(SDL_Window* window, SDL_Renderer* renderer, Toolbar *toolbar, bool button);
 int drawWindow(SDL_Renderer *renderer, Toolbar *toolbar, bool side, bool button);
 
-void clickButton(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar, SDL_FPoint mousePos, bool down);
+int clickButton(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar, SDL_FPoint mousePos, bool down);
 void hoverButton(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar, SDL_FPoint mousePos);
 
 #endif //TOOLBAR_COMPONENT_H

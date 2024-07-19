@@ -9,6 +9,6 @@ void func_Login();
 void func_Multimonitor();
 void func_Minimize();
 void func_FullScreen();
-int func_Exit();
+void func_Exit();
 
 #endif //TOOLBAR_FUNCTION_H

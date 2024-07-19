@@ -64,6 +64,4 @@ typedef struct{
     SDL_FRect *verticalArr[NUM_VERTICAL_BUTTON];
 } Toolbar;
 
-
-
 #endif // TOOLBAR_DEFINE_H

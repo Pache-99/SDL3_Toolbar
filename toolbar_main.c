@@ -1,6 +1,6 @@
 #include "toolbar_main.h"
 
-void runToolbar(){
+int runToolbar(){
 
     SDL_Window *window = makeWindow();
     SDL_Renderer *renderer = makeRenderer(window);
@@ -25,7 +25,6 @@ void runToolbar(){
     SDL_Event e;
 
     while (!quit){
-
         SDL_WaitEvent(&e);
 
         // Quit event
@@ -54,7 +53,8 @@ void runToolbar(){
                 break;
 
             case SDL_EVENT_MOUSE_BUTTON_UP:
-                clickButton(window, renderer, toolbar, mousePos, false);
+                if (clickButton(window, renderer, toolbar, mousePos, false) == EXIT)
+                quit = true;
                 break;
 
             case SDL_EVENT_MOUSE_MOTION:
@@ -68,6 +68,8 @@ void runToolbar(){
     SDL_DestroyWindow(window);
 
     SDL_Quit();
+
+    return 0;
 }
 
 int main(int argc, char* argv[]){
@@ -83,5 +85,6 @@ int main(int argc, char* argv[]){
     }
 
     runToolbar();
+
     return 0;
 }

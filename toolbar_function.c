@@ -15,8 +15,12 @@ void classifyButton(int button){
         case MINI:
 
             break;
-        
+        case FULLSCREEN:
 
+            break;
+        case EXIT:
+            func_Exit();
+            break;
     }
 
 }
@@ -58,10 +62,6 @@ void func_Fullscreen(){
 
 }
 
-int func_Exit(){
-
-    int exit;
-
-    
-    return 0;
+void func_Exit(){
+    SDL_Quit();
 }
