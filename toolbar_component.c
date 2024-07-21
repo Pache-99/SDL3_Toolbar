@@ -44,8 +44,12 @@ void settingToolbar(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar
         toolbar->verticalArr[i] = (SDL_FRect*)malloc(sizeof(SDL_FRect));
     }
     
-    // TODO: window resize => 해상도 비례를 지키면서 줄일 수 있는 방법이 있나?
-    // TODO: 현재는 window, button 간 ratio를 계산하지 않으므로 수정 필요. 
+    // TODO: 풀스크린 전환 시 왜 변화가 없는지를 고려해야 함. 
+
+    // WINDOW WIDTH : WINDOW HEIGHT = BUTTON WIDTH : BUTTON HEIGHT
+
+    // BUTTON WIDTH = (BUTTON HEIGHT * WINDOW WIDTH) / WINDOW HEIGHT
+    // BUTTON HEIGHT = (BUTTON WIDTH * WINDOW HEIGHT) / WINDOW WIDTH
 
     // Window and background
     int windowWidth, windowHeight;
@@ -54,10 +58,16 @@ void settingToolbar(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar
     *(toolbar -> background) = (SDL_FRect){0, 0, windowWidth, windowHeight}; 
     SDL_RenderTexture(renderer, loadBackTexture(renderer), NULL, toolbar->background);
 
+        // Window Changed ratio
+    int windowRatio = windowWidth / SCREEN_WIDTH;
+
     // Buttons
     float buttonWidth, buttonHeight;
     SDL_GetTextureSize(loadButtonTexture(renderer, PIN, NORMAL), &buttonWidth, &buttonHeight);
-        // TODO: window와의 비례 추가 
+
+        // Button Ratio (windowWidth / SCREEN_WIDTH 진행하고 이 수를 곱하면 된다.)
+    buttonWidth *= windowRatio;
+    buttonHeight *= windowRatio;
 
         // Buttons tray
     float trayWidth = buttonWidth * NUM_MAIN_BUTTON;
@@ -76,6 +86,9 @@ void settingToolbar(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar
     float sideWidth, sideHeight;
     SDL_GetTextureSize(loadSideTexture(renderer, LEFT), &sideWidth, &sideHeight);
 
+    sideWidth *= windowRatio;
+    sideHeight *= windowRatio;
+
     float left_X = tray_X - sideWidth;
     float left_Y = 0;
     float right_X = tray_X + trayWidth;
@@ -87,6 +100,9 @@ void settingToolbar(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar
     // Vertical
     float verticalWidth, verticalHeight;
     SDL_GetTextureSize(loadVerticalTexture(renderer, FLIP), &verticalWidth, &verticalHeight);
+
+    verticalWidth *= windowRatio;
+    verticalHeight *= windowRatio;
 
     float flip_X = (windowWidth / 2) - (verticalWidth / 2);
     float flip_Y = trayHeight;

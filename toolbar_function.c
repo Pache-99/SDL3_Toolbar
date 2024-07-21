@@ -19,7 +19,6 @@ void classifyButton(int button, SDL_Window *window){
             func_Maximize(window);
             break;
     }
-
 }
 
 void func_Pin(){
@@ -36,11 +35,11 @@ void func_Login(){
 
 void func_Multimonitor(){
 
-    int numDisplays = SDL_GetNumVideoDisplays();
+    // int numDisplays = SDL_GetNumVideoDisplays(); // 없는 함수
 
-    if (numDisplays == 0){
-        SDL_SetError("Can't find monitor");
-    }
+    // if (numDisplays == 0){
+    //     SDL_SetError("Can't find monitor");
+    // }
     
     // TODO: 새로 생성된 윈도우들이 기존 윈도우와 같게, 독립적으로 작동하도록? 아니면 툴바 없이?
 }
