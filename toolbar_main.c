@@ -5,10 +5,7 @@ int runToolbar(){
     SDL_Window *window = makeWindow();
     SDL_Renderer *renderer = makeRenderer(window);
 
-    // int width, height;
-    // SDL_GetCurrentRenderOutputSize(renderer, &width, &height);
-    // SDL_SetWindowSize(window, width, height);
-    // SDL_SetWindowFullscreen(window, true);
+    SDL_SetWindowFullscreen(window, true);
     
     Toolbar *toolbar = (Toolbar*)malloc(sizeof(Toolbar));
 

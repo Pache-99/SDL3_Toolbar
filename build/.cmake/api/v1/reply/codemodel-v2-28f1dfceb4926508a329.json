@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Workspace/SDL3_Toolbar/build",
-		"source" : "C:/Workspace/SDL3_Toolbar"
+		"build" : "C:/Projects/Toolbar/build",
+		"source" : "C:/Projects/Toolbar"
 	},
 	"version" : 
 	{

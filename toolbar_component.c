@@ -149,7 +149,7 @@ int clickButton(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar, SD
                         return EXIT;
                     }
 
-                    classifyButton(i);
+                    classifyButton(i, window);
                     break;
             }
 
