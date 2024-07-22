@@ -1,5 +1,5 @@
-C:/Projects/Toolbar/build/CMakeFiles/Toolbar.dir
-C:/Projects/Toolbar/build/CMakeFiles/package.dir
-C:/Projects/Toolbar/build/CMakeFiles/package_source.dir
-C:/Projects/Toolbar/build/CMakeFiles/edit_cache.dir
-C:/Projects/Toolbar/build/CMakeFiles/rebuild_cache.dir
+C:/Workspace/SDL3_Toolbar/build/CMakeFiles/Toolbar.dir
+C:/Workspace/SDL3_Toolbar/build/CMakeFiles/package.dir
+C:/Workspace/SDL3_Toolbar/build/CMakeFiles/package_source.dir
+C:/Workspace/SDL3_Toolbar/build/CMakeFiles/edit_cache.dir
+C:/Workspace/SDL3_Toolbar/build/CMakeFiles/rebuild_cache.dir

@@ -1,5 +1,7 @@
 #include "toolbar_component.h"
 
+static bool isFlip = false;
+
 SDL_Window* makeWindow(){
 
     SDL_Window *window = SDL_CreateWindow("SDL3_Toolbar",
@@ -43,13 +45,6 @@ void settingToolbar(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar
     for (int i = 0; i < NUM_VERTICAL_BUTTON; i++){
         toolbar->verticalArr[i] = (SDL_FRect*)malloc(sizeof(SDL_FRect));
     }
-    
-    // TODO: 풀스크린 전환 시 왜 변화가 없는지를 고려해야 함. 
-
-    // WINDOW WIDTH : WINDOW HEIGHT = BUTTON WIDTH : BUTTON HEIGHT
-
-    // BUTTON WIDTH = (BUTTON HEIGHT * WINDOW WIDTH) / WINDOW HEIGHT
-    // BUTTON HEIGHT = (BUTTON WIDTH * WINDOW HEIGHT) / WINDOW WIDTH
 
     // Window and background
     int windowWidth, windowHeight;
@@ -58,8 +53,12 @@ void settingToolbar(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar
     *(toolbar -> background) = (SDL_FRect){0, 0, windowWidth, windowHeight}; 
     SDL_RenderTexture(renderer, loadBackTexture(renderer), NULL, toolbar->background);
 
+    // width:height = WIDTH:HEIGHT
+    //
+
         // Window Changed ratio
     int windowRatio = windowWidth / SCREEN_WIDTH;
+    SDL_Log("RATIO: %d", windowRatio);
 
     // Buttons
     float buttonWidth, buttonHeight;
@@ -122,14 +121,15 @@ void settingToolbar(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar
 // * (bool)button: 메인 버튼 재렌더링 여부 
 int drawWindow(SDL_Renderer *renderer, Toolbar *toolbar, bool side, bool button){
 
+    SDL_RenderClear(renderer);
     SDL_RenderTexture(renderer, loadBackTexture(renderer), NULL, toolbar->background);
-
-    for (int i = 0; i < NUM_SIDE_BUTTON; i++){
-        SDL_RenderTexture(renderer, loadSideTexture(renderer, i), NULL, toolbar->sideArr[i]);
-    }
 
     if (side){
         SDL_RenderTexture(renderer, loadVerticalTexture(renderer, FLIP), NULL, toolbar->verticalArr[FLIP]);
+
+        for (int i = 0; i < NUM_SIDE_BUTTON; i++){
+            SDL_RenderTexture(renderer, loadSideTexture(renderer, i), NULL, toolbar->sideArr[i]);
+        }   
     }
     else{
         SDL_RenderTexture(renderer, loadVerticalTexture(renderer, SPREAD), NULL, toolbar->verticalArr[SPREAD]);
@@ -141,21 +141,18 @@ int drawWindow(SDL_Renderer *renderer, Toolbar *toolbar, bool side, bool button)
             SDL_RenderTexture(renderer, loadButtonTexture(renderer, i, NORMAL), NULL, toolbar->buttonArr[i]);
         }
     }
-
 }
 
-// Summary: 메인 버튼 down & up
+// Summary: 메인 버튼 click down & click up
 int clickButton(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar, SDL_FPoint mousePos, bool down){
-
-    // TODO: Hover 이미지가 여러번 출력되는거 같음. 조금 진하게 보임 
-    drawWindow(renderer, toolbar, true, true);
 
     for (int i = 0; i < NUM_MAIN_BUTTON; i++){
 
-        if (SDL_PointInRectFloat(&mousePos, toolbar->buttonArr[i])){
+        if (!isFlip && SDL_PointInRectFloat(&mousePos, toolbar->buttonArr[i])){
             switch(down){
                 case true:
                     SDL_RenderTexture(renderer, loadButtonTexture(renderer, i, CLICK), NULL, toolbar->buttonArr[i]);
+                    SDL_RenderPresent(renderer);
                     break;
 
                 case false:
@@ -166,10 +163,33 @@ int clickButton(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar, SD
                     }
 
                     classifyButton(i, window);
+                    SDL_RenderPresent(renderer);
                     break;
             }
+        }
+    }
 
-            SDL_RenderPresent(renderer);  
+    if (!down){
+        return 0;
+    }
+
+    for (int i = 0; i < NUM_VERTICAL_BUTTON; i++){
+
+        if (!isFlip && SDL_PointInRectFloat(&mousePos, toolbar->verticalArr[FLIP])){
+            drawWindow(renderer, toolbar, false, false);
+
+            SDL_Log("CLICK FLIP BUTTON");
+            isFlipToggle(true);
+
+            SDL_RenderPresent(renderer);
+        }
+        else if (isFlip && SDL_PointInRectFloat(&mousePos, toolbar->verticalArr[SPREAD])){
+            drawWindow(renderer, toolbar, true, true);
+
+            SDL_Log("CLICK SPREAD BUTTON");
+            isFlipToggle(false);
+
+            SDL_RenderPresent(renderer);
         }
     }
 
@@ -177,7 +197,11 @@ int clickButton(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar, SD
 }
 
 // Summary: 버튼 호버링
-void hoverButton(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar, SDL_FPoint mousePos){
+int hoverButton(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar, SDL_FPoint mousePos){
+
+    if (isFlip){
+        return 0;
+    }
 
     SDL_RenderClear(renderer);
     drawWindow(renderer, toolbar, true, false);
@@ -193,4 +217,11 @@ void hoverButton(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar, S
         }
     }
     SDL_RenderPresent(renderer);
+
+    return 0;
+}
+
+void isFlipToggle(bool flip){
+
+    isFlip = flip;
 }

@@ -19,6 +19,8 @@ void settingToolbar(SDL_Window* window, SDL_Renderer* renderer, Toolbar *toolbar
 int drawWindow(SDL_Renderer *renderer, Toolbar *toolbar, bool side, bool button);
 
 int clickButton(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar, SDL_FPoint mousePos, bool down);
-void hoverButton(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar, SDL_FPoint mousePos);
+int hoverButton(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar, SDL_FPoint mousePos);
+
+void isFlipToggle(bool flip);
 
 #endif //TOOLBAR_COMPONENT_H
