@@ -49,36 +49,36 @@ cmake_ninja_workdir = /Users/nsbsb9910/Workspace/SDL3_Toolbar/build/
 
 build cmake_object_order_depends_target_Toolbar: phony || .
 
-build CMakeFiles/Toolbar.dir/toolbar_define.c.o: C_COMPILER__Toolbar_unscanned_Debug /Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_define.c || cmake_object_order_depends_target_Toolbar
-  DEP_FILE = CMakeFiles/Toolbar.dir/toolbar_define.c.o.d
+build CMakeFiles/Toolbar.dir/toolbar_define.cpp.o: CXX_COMPILER__Toolbar_unscanned_Debug /Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_define.cpp || cmake_object_order_depends_target_Toolbar
+  DEP_FILE = CMakeFiles/Toolbar.dir/toolbar_define.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
   INCLUDES = -isystem /opt/homebrew/include
   OBJECT_DIR = CMakeFiles/Toolbar.dir
   OBJECT_FILE_DIR = CMakeFiles/Toolbar.dir
 
-build CMakeFiles/Toolbar.dir/toolbar_main.c.o: C_COMPILER__Toolbar_unscanned_Debug /Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_main.c || cmake_object_order_depends_target_Toolbar
-  DEP_FILE = CMakeFiles/Toolbar.dir/toolbar_main.c.o.d
+build CMakeFiles/Toolbar.dir/toolbar_main.cpp.o: CXX_COMPILER__Toolbar_unscanned_Debug /Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_main.cpp || cmake_object_order_depends_target_Toolbar
+  DEP_FILE = CMakeFiles/Toolbar.dir/toolbar_main.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
   INCLUDES = -isystem /opt/homebrew/include
   OBJECT_DIR = CMakeFiles/Toolbar.dir
   OBJECT_FILE_DIR = CMakeFiles/Toolbar.dir
 
-build CMakeFiles/Toolbar.dir/toolbar_component.c.o: C_COMPILER__Toolbar_unscanned_Debug /Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_component.c || cmake_object_order_depends_target_Toolbar
-  DEP_FILE = CMakeFiles/Toolbar.dir/toolbar_component.c.o.d
+build CMakeFiles/Toolbar.dir/toolbar_component.cpp.o: CXX_COMPILER__Toolbar_unscanned_Debug /Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_component.cpp || cmake_object_order_depends_target_Toolbar
+  DEP_FILE = CMakeFiles/Toolbar.dir/toolbar_component.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
   INCLUDES = -isystem /opt/homebrew/include
   OBJECT_DIR = CMakeFiles/Toolbar.dir
   OBJECT_FILE_DIR = CMakeFiles/Toolbar.dir
 
-build CMakeFiles/Toolbar.dir/toolbar_texture.c.o: C_COMPILER__Toolbar_unscanned_Debug /Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_texture.c || cmake_object_order_depends_target_Toolbar
-  DEP_FILE = CMakeFiles/Toolbar.dir/toolbar_texture.c.o.d
+build CMakeFiles/Toolbar.dir/toolbar_texture.cpp.o: CXX_COMPILER__Toolbar_unscanned_Debug /Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_texture.cpp || cmake_object_order_depends_target_Toolbar
+  DEP_FILE = CMakeFiles/Toolbar.dir/toolbar_texture.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
   INCLUDES = -isystem /opt/homebrew/include
   OBJECT_DIR = CMakeFiles/Toolbar.dir
   OBJECT_FILE_DIR = CMakeFiles/Toolbar.dir
 
-build CMakeFiles/Toolbar.dir/toolbar_function.c.o: C_COMPILER__Toolbar_unscanned_Debug /Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_function.c || cmake_object_order_depends_target_Toolbar
-  DEP_FILE = CMakeFiles/Toolbar.dir/toolbar_function.c.o.d
+build CMakeFiles/Toolbar.dir/toolbar_function.cpp.o: CXX_COMPILER__Toolbar_unscanned_Debug /Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_function.cpp || cmake_object_order_depends_target_Toolbar
+  DEP_FILE = CMakeFiles/Toolbar.dir/toolbar_function.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
   INCLUDES = -isystem /opt/homebrew/include
   OBJECT_DIR = CMakeFiles/Toolbar.dir
@@ -92,7 +92,7 @@ build CMakeFiles/Toolbar.dir/toolbar_function.c.o: C_COMPILER__Toolbar_unscanned
 #############################################
 # Link the executable Toolbar
 
-build Toolbar: C_EXECUTABLE_LINKER__Toolbar_Debug CMakeFiles/Toolbar.dir/toolbar_define.c.o CMakeFiles/Toolbar.dir/toolbar_main.c.o CMakeFiles/Toolbar.dir/toolbar_component.c.o CMakeFiles/Toolbar.dir/toolbar_texture.c.o CMakeFiles/Toolbar.dir/toolbar_function.c.o | /opt/homebrew/lib/libSDL3_image.0.0.0.dylib /opt/homebrew/lib/libSDL3.0.dylib
+build Toolbar: CXX_EXECUTABLE_LINKER__Toolbar_Debug CMakeFiles/Toolbar.dir/toolbar_define.cpp.o CMakeFiles/Toolbar.dir/toolbar_main.cpp.o CMakeFiles/Toolbar.dir/toolbar_component.cpp.o CMakeFiles/Toolbar.dir/toolbar_texture.cpp.o CMakeFiles/Toolbar.dir/toolbar_function.cpp.o | /opt/homebrew/lib/libSDL3_image.0.0.0.dylib /opt/homebrew/lib/libSDL3.0.dylib
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
   LINK_LIBRARIES = -Wl,-rpath,/opt/homebrew/lib  /opt/homebrew/lib/libSDL3_image.0.0.0.dylib  /opt/homebrew/lib/libSDL3.0.dylib
   LINK_PATH = -L/opt/homebrew/lib

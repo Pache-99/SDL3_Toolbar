@@ -13,11 +13,11 @@ elseif(APPLE)
 endif()
 
 set(SOURCES
-    toolbar_define.c
-    toolbar_main.c
-    toolbar_component.c
-    toolbar_texture.c
-    toolbar_function.c
+    toolbar_define.cpp
+    toolbar_main.cpp
+    toolbar_component.cpp
+    toolbar_texture.cpp
+    toolbar_function.cpp
 )
 
 add_executable(Toolbar ${SOURCES})
