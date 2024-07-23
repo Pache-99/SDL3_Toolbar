@@ -1,19 +1,18 @@
 #include "toolbar_main.hpp"
 
-// TODO: macOS에서 클릭 시 뒤에 까만 네모가 비치는 증상 => 클릭 시 렌더링 할 rect 설정이 잘못되어 그런 것으로 보임.
-// TODO: 맥북 상단 작업표시줄 공간은 남겨두고 FullScreen이 이루어짐. 
+// PROJECT TODO: EXIT 메인 버튼 키를 눌렀을 때 메인 함수에 0을 반환해야함. (종료 기능 찾기)
+// PROJECT TODO: window와 renderer를 가져와야 함. 
+// MY TODO: 툴바 구성요소들의 비례식을 찾아야 함. 
+// MY TODO: 화면 크기 조절 시 툴바 위치 고정되도록 해야 됨. 
 
-int runToolbar(){
-
-    SDL_Window *window = makeWindow();
-    SDL_Renderer *renderer = makeRenderer(window);
+int runToolbar(SDL_Window *window, SDL_Renderer *renderer){
 
     // SDL_SetWindowFullscreen(window, true);
     
     Toolbar *toolbar = (Toolbar*)malloc(sizeof(Toolbar));
 
     bool button = true;
-    settingToolbar(window, renderer, toolbar, button);
+    settingToolbar(window, renderer, toolbar);
 
     SDL_RenderPresent(renderer);
 
@@ -38,7 +37,7 @@ int runToolbar(){
         }
         
         else if (e.type == SDL_EVENT_WINDOW_RESIZED){
-            settingToolbar(window, renderer, toolbar, button);
+            resettingToolbar(window, renderer, toolbar);
             SDL_RenderPresent(renderer);
         }
 
@@ -49,15 +48,22 @@ int runToolbar(){
         switch(e.type){
 
             case SDL_EVENT_MOUSE_BUTTON_DOWN:
+                clickSide(window, renderer, toolbar, mousePos, DOWN);
+
                 clickButton(window, renderer, toolbar, mousePos, true);
                 break;
 
             case SDL_EVENT_MOUSE_BUTTON_UP:
-                if (clickButton(window, renderer, toolbar, mousePos, false) == EXIT)
-                quit = true;
+                clickSide(window, renderer, toolbar, mousePos, UP);
+
+                if (clickButton(window, renderer, toolbar, mousePos, false) == EXIT){
+                    quit = true;
+                }
                 break;
 
             case SDL_EVENT_MOUSE_MOTION:
+                clickSide(window, renderer, toolbar, mousePos, MOTION);
+
                 hoverButton(window, renderer, toolbar, mousePos);
                 break;
         }
@@ -84,7 +90,10 @@ int main(int argc, char* argv[]){
         return 1;
     }
 
-    runToolbar();
+    SDL_Window *window = makeWindow();
+    SDL_Renderer *renderer = makeRenderer(window);
+
+    runToolbar(window, renderer);
 
     return 0;
 }

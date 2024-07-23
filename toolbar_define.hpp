@@ -46,8 +46,9 @@ typedef enum SideProperty {
 } SideProperty;
 
 typedef enum SideStatus {
-    STOP,
-    MOVE
+    DOWN,
+    UP, 
+    MOTION
 } SideStatus;
 
 // Vertical Buttons

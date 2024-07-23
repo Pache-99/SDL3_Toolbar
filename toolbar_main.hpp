@@ -3,4 +3,6 @@
 
 #include "toolbar_component.hpp"
 
+int runToolbar(SDL_Window *window, SDL_Renderer *renderer);
+
 #endif // TOOLBAR_DEFINE_H
