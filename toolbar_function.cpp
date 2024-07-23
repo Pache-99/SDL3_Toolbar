@@ -21,10 +21,9 @@ void classifyButton(int button, SDL_Window *window){
     }
 }
 
-void func_Pin(){
+void func_Pin(bool activate){
 
-    // TODO: 핀으로 고정 시 윈도우 툴바가 좌우로 이동하지 않도록. 
-    // TODO: 클릭 시 작동도 바뀌어야 함. (클릭 => 클릭 이미지 고정, 다시 클릭 => 본 이미지로 복귀)
+    
 }
 
 void func_Login(){

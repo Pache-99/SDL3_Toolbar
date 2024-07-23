@@ -15,12 +15,15 @@
 SDL_Window* makeWindow();
 SDL_Renderer* makeRenderer(SDL_Window *window);
 
-void settingToolbar(SDL_Window* window, SDL_Renderer* renderer, Toolbar *toolbar, bool button);
+void settingToolbar(SDL_Window* window, SDL_Renderer* renderer, Toolbar *toolbar);
 int drawWindow(SDL_Renderer *renderer, Toolbar *toolbar, bool side, bool button);
+void resettingToolbar(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar);
 
 int clickButton(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar, SDL_FPoint mousePos, bool down);
 int hoverButton(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar, SDL_FPoint mousePos);
+int clickSide(SDL_Window *window, SDL_Renderer *renderer, Toolbar *toolbar, SDL_FPoint mousePos, SideStatus sideStatus);
 
 void isFlipToggle(bool flip);
+
 
 #endif //TOOLBAR_COMPONENT_H
