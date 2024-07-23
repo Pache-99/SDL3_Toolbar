@@ -67,7 +67,7 @@
 					"path" : "/opt/homebrew/include"
 				}
 			],
-			"language" : "C",
+			"language" : "CXX",
 			"sourceIndexes" : 
 			[
 				0,
@@ -111,7 +111,7 @@
 				"role" : "libraries"
 			}
 		],
-		"language" : "C"
+		"language" : "CXX"
 	},
 	"name" : "Toolbar",
 	"nameOnDisk" : "Toolbar",
@@ -139,31 +139,31 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "toolbar_define.c",
+			"path" : "toolbar_define.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "toolbar_main.c",
+			"path" : "toolbar_main.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "toolbar_component.c",
+			"path" : "toolbar_component.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "toolbar_texture.c",
+			"path" : "toolbar_texture.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "toolbar_function.c",
+			"path" : "toolbar_function.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

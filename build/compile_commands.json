@@ -1,32 +1,32 @@
 [
 {
   "directory": "/Users/nsbsb9910/Workspace/SDL3_Toolbar/build",
-  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -isystem /opt/homebrew/include -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/Toolbar.dir/toolbar_define.c.o -c /Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_define.c",
-  "file": "/Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_define.c",
-  "output": "CMakeFiles/Toolbar.dir/toolbar_define.c.o"
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -isystem /opt/homebrew/include -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/Toolbar.dir/toolbar_define.cpp.o -c /Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_define.cpp",
+  "file": "/Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_define.cpp",
+  "output": "CMakeFiles/Toolbar.dir/toolbar_define.cpp.o"
 },
 {
   "directory": "/Users/nsbsb9910/Workspace/SDL3_Toolbar/build",
-  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -isystem /opt/homebrew/include -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/Toolbar.dir/toolbar_main.c.o -c /Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_main.c",
-  "file": "/Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_main.c",
-  "output": "CMakeFiles/Toolbar.dir/toolbar_main.c.o"
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -isystem /opt/homebrew/include -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/Toolbar.dir/toolbar_main.cpp.o -c /Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_main.cpp",
+  "file": "/Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_main.cpp",
+  "output": "CMakeFiles/Toolbar.dir/toolbar_main.cpp.o"
 },
 {
   "directory": "/Users/nsbsb9910/Workspace/SDL3_Toolbar/build",
-  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -isystem /opt/homebrew/include -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/Toolbar.dir/toolbar_component.c.o -c /Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_component.c",
-  "file": "/Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_component.c",
-  "output": "CMakeFiles/Toolbar.dir/toolbar_component.c.o"
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -isystem /opt/homebrew/include -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/Toolbar.dir/toolbar_component.cpp.o -c /Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_component.cpp",
+  "file": "/Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_component.cpp",
+  "output": "CMakeFiles/Toolbar.dir/toolbar_component.cpp.o"
 },
 {
   "directory": "/Users/nsbsb9910/Workspace/SDL3_Toolbar/build",
-  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -isystem /opt/homebrew/include -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/Toolbar.dir/toolbar_texture.c.o -c /Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_texture.c",
-  "file": "/Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_texture.c",
-  "output": "CMakeFiles/Toolbar.dir/toolbar_texture.c.o"
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -isystem /opt/homebrew/include -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/Toolbar.dir/toolbar_texture.cpp.o -c /Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_texture.cpp",
+  "file": "/Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_texture.cpp",
+  "output": "CMakeFiles/Toolbar.dir/toolbar_texture.cpp.o"
 },
 {
   "directory": "/Users/nsbsb9910/Workspace/SDL3_Toolbar/build",
-  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -isystem /opt/homebrew/include -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/Toolbar.dir/toolbar_function.c.o -c /Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_function.c",
-  "file": "/Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_function.c",
-  "output": "CMakeFiles/Toolbar.dir/toolbar_function.c.o"
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -isystem /opt/homebrew/include -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/Toolbar.dir/toolbar_function.cpp.o -c /Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_function.cpp",
+  "file": "/Users/nsbsb9910/Workspace/SDL3_Toolbar/toolbar_function.cpp",
+  "output": "CMakeFiles/Toolbar.dir/toolbar_function.cpp.o"
 }
 ]
