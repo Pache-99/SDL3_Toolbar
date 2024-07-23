@@ -1,5 +1,8 @@
 #include "toolbar_main.h"
 
+// TODO: macOS에서 클릭 시 뒤에 까만 네모가 비치는 증상
+// TODO: 맥북 상단 작업표시줄 공간은 남겨두고 FullScreen이 이루어짐. 
+
 int runToolbar(){
 
     SDL_Window *window = makeWindow();
