@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /opt/homebrew/Cellar/cmake/3.30.0/bin/cmake --regenerate-during-build -S/Users/nsbsb9910/Workspace/SDL3_Toolbar -B/Users/nsbsb9910/Workspace/SDL3_Toolbar/build
+  command = /opt/homebrew/Cellar/cmake/3.30.0/bin/cmake --regenerate-during-build -S/Users/nsbsb9910/Desktop/SDL3_Workspace/SDL3_Toolbar -B/Users/nsbsb9910/Desktop/SDL3_Workspace/SDL3_Toolbar/build
   description = Re-running CMake...
   generator = 1
 
